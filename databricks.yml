@@ -13,14 +13,15 @@ targets:
     mode: development
     workspace:
       host: https://adb-1045986908780898.18.azuredatabricks.net
+      root_path: /Datateam/${bundle.target}/${workspace.current_user.userName}/${bundle.name}
     default: true
     git:
       branch: dev
 
   staging:
-    mode: staging
     workspace:
       host: https://adb-1045986908780898.18.azuredatabricks.net
+      root_path: /Datateam/${bundle.target}/${bundle.name}
     git:
       branch: stg
 
@@ -28,8 +29,8 @@ targets:
     mode: production
     workspace:
       host: https://adb-1045986908780898.18.azuredatabricks.net
-      root_path: /Datateam/${bundle.name}
+      root_path: /Datateam/${bundle.target}/${bundle.name}
     git:
-      branch: prd
+      branch: main
     run_as:
       user_name: david.leiva@databricks.com

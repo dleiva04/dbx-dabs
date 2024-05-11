@@ -8,3 +8,17 @@ resources:
             notebook_path: ../src/python_notebook.ipynb
             base_parameters:
               env: ${bundle.target}
+          new_cluster:
+            cluster_name: ""
+            spark_version: 14.3.x-scala2.12
+            azure_attributes:
+              first_on_demand: 1
+              availability: SPOT_WITH_FALLBACK_AZURE
+              spot_bid_max_price: -1
+            node_type_id: Standard_DS3_v2
+            enable_elastic_disk: true
+            data_security_mode: SINGLE_USER
+            runtime_engine: PHOTON
+            autoscale:
+              min_workers: 2
+              max_workers: 8
