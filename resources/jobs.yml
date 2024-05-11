@@ -1,0 +1,10 @@
+resources:
+  jobs:
+    Local_Job:
+      name: Local Job
+      tasks:
+        - task_key: Python_Task
+          notebook_task:
+            notebook_path: ../src/python_notebook.ipynb
+            base_parameters:
+              env: ${bundle.target}

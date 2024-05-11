@@ -1,0 +1,35 @@
+bundle:
+  name: DABs_demo
+
+include:
+  - resources/*.yml
+
+variables:
+  warehouse_id:
+    default: 0707fbe9cb3ee407
+
+targets:
+  development:
+    mode: development
+    workspace:
+      host: https://adb-1045986908780898.18.azuredatabricks.net
+    default: true
+    git:
+      branch: dev
+
+  staging:
+    mode: staging
+    workspace:
+      host: https://adb-1045986908780898.18.azuredatabricks.net
+    git:
+      branch: stg
+
+  production:
+    mode: production
+    workspace:
+      host: https://adb-1045986908780898.18.azuredatabricks.net
+      root_path: /Datateam/${bundle.name}
+    git:
+      branch: prd
+    run_as:
+      user_name: david.leiva@databricks.com
